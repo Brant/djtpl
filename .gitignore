@@ -28,3 +28,4 @@ env/
 build/
 mediabrute_usefile
 dist/
+collectstatic/
