@@ -121,7 +121,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
     'django.core.context_processors.request',
-    'noodes.context_processors.noodle_processors',
+    'noodles.context_processors.noodle_processors',
 )
 
 ROOT_URLCONF = '{{ project_name }}.urls'
