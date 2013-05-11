@@ -1,26 +1,34 @@
 #!/usr/bin/env python
 import os
 import sys
+import imp
 
 from django.conf import settings
 
+MY_INSTALLED_APPS = [
+    '{{ project_name }}',
+    '{{ project_name }}.tests',
+]
+
+
+try:
+    imp.find_module("django_nose")
+    MY_INSTALLED_APPS.append("django_nose")
+except ImportError:
+    pass
+
+
 if not settings.configured:
     settings.configure(
-        DATABASES={
+        DATABASES = {
             'default': {
                 'ENGINE': 'django.db.backends.sqlite3',
             }
         },
-        INSTALLED_APPS=[
-            'mediabrute',
-            'mediabrute.tests',
-            'django.contrib.sites',
-            'django_nose'
-        ],
+        INSTALLED_APPS = MY_INSTALLED_APPS,
         SITE_ID = 1,
         STATIC_URL = '/static/',
         ROOT_URLCONF = '{{ project_name }}.tests.urls',
-#         TEST_RUNNER = "django_nose.runner.NoseTestSuiteRunner",
         NOSE_ARGS = [
             "--with-xcoverage", 
             "--cover-inclusive", 
@@ -35,16 +43,22 @@ if not settings.configured:
         ],
     )
 
+
 try:
     from django_nose.runner import NoseTestSuiteRunner
 except ImportError:
     from django.test.simple import DjangoTestSuiteRunner
 
+
+
 def runtests():
-    runner = DjangoTestSuiteRunner()
-    runner = NoseTestSuiteRunner()
+    try:
+        runner = NoseTestSuiteRunner()
+    except NameError:
+        runner = DjangoTestSuiteRunner()
     failures = runner.run_tests(['tests'])
     sys.exit(failures)
+
 
 if __name__ == '__main__':
     runtests(*sys.argv[1:])
