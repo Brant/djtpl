@@ -2,10 +2,8 @@
 
 import os
 
-PROJECT_PATH = os.path.dirname(os.path.dirname(
-        os.path.abspath(os.path.dirname(__file__)
-    )
-))
+PROJECT_PATH = (os.path.abspath(os.path.dirname(__file__)))
+
 print PROJECT_PATH
 
 
