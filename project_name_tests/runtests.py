@@ -7,7 +7,7 @@ from django.conf import settings
 
 MY_INSTALLED_APPS = [
     '{{ project_name }}',
-    '{{ project_name }}.tests',
+    '{{ project_name }}_tests',
 ]
 
 
@@ -56,7 +56,7 @@ def runtests():
         runner = NoseTestSuiteRunner()
     except NameError:
         runner = DjangoTestSuiteRunner()
-    failures = runner.run_tests(['tests'])
+    failures = runner.run_tests(['{{ project_name}}_tests'])
     sys.exit(failures)
 
 
