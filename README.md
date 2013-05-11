@@ -13,7 +13,7 @@ Test Suite
 This project architecture separates the project test suite from the individual apps. Tests should reside in my_project_tests/tests.py
 
 ###To run tests 
-`python my_project_tests.runtests.py`
+`python my_project_tests/runtests.py`
 
 ###To enable coverage
-`pip install -r my_project_tests/requirements.txt`
+`pip install -r my_project_tests/requirements.txt` - then run tests as above
