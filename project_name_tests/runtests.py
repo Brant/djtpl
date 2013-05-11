@@ -5,6 +5,7 @@ import imp
 
 from django.conf import settings
 
+
 MY_INSTALLED_APPS = [
     '{{ project_name }}',
     '{{ project_name }}_tests',
@@ -50,7 +51,6 @@ except ImportError:
     from django.test.simple import DjangoTestSuiteRunner
 
 
-
 def runtests():
     try:
         runner = NoseTestSuiteRunner()
@@ -62,4 +62,3 @@ def runtests():
 
 if __name__ == '__main__':
     runtests(*sys.argv[1:])
-
