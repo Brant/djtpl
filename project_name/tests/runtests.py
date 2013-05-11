@@ -35,9 +35,10 @@ if not settings.configured:
         ],
     )
 
-
-from django.test.simple import DjangoTestSuiteRunner
-from django_nose.runner import NoseTestSuiteRunner
+try:
+    from django_nose.runner import NoseTestSuiteRunner
+except ImportError:
+    from django.test.simple import DjangoTestSuiteRunner
 
 def runtests():
     runner = DjangoTestSuiteRunner()
