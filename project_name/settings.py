@@ -6,7 +6,8 @@ PROJECT_PATH = os.path.dirname(
         os.path.abspath(os.path.dirname(__file__)
     )
 )
-
+THE_THEME = "themes/{{ project_name }}"
+THEME_PATH = PROJECT_PATH + "/assets/" + THE_THEME
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -69,7 +70,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = PROJECT_PATH + "/static"
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -80,6 +81,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    THEME_PATH + "/static",
 )
 
 # List of finder classes that know how to find static files in
@@ -91,7 +93,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '{{ secret_key }}'
+SECRET_KEY = 'a%9-7a2d+(0yn92j06qo4i(3s%3w40v=o1t(jf=@1xe=l@8ctf'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -119,6 +121,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    THEME_PATH + "/templates"
 )
 
 INSTALLED_APPS = (
