@@ -1,5 +1,14 @@
 # Django settings for {{ project_name }} project.
 
+import os
+
+PROJECT_PATH = os.path.dirname(os.path.dirname(
+        os.path.abspath(os.path.dirname(__file__)
+    )
+))
+print PROJECT_PATH
+
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
