@@ -6,11 +6,12 @@
 		<title>{% block title %}| {{ SITE_NAME }}{% endblock %}</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
+		<link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png" />
 		{% add_static "css" %}
 		<script src="{% static "js/nocache/modernizr.js" %}"></script>
 	</head>
 	
-	<body>
+	<body class="{% block body_class %}{% endblock %}">
 		
 		{% block content %}{% endblock %}
 		
