@@ -1,5 +1,9 @@
+# Depending on your environment, you may comment one or more of the first 3 out
 django<1.6
 pil
+psycopg2
+
+# Generally useful stuff
 django-debug-toolbar
 git+git://github.com/Brant/django-noodles.git
 git+git://github.com/Brant/django-mub.git
