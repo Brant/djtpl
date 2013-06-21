@@ -188,6 +188,11 @@ LOGGING = {
 MUB_CSS_ORDER = (('normalize.css', 'main.css', 'style.css', ), ())
 MUB_MINIFY = True
 
+try:
+    from {{ project_name }}.local_settings import *
+except ImportError:
+    pass
+
 if DEBUG:
     MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware', )
     INTERNAL_IPS = ('127.0.0.1',)
