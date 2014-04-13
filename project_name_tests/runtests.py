@@ -19,8 +19,13 @@ except ImportError:
     pass
 
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, BASE_DIR)
+
+
 if not settings.configured:
     settings.configure(
+        BASE_DIR = BASE_DIR,
         DATABASES = {
             'default': {
                 'ENGINE': 'django.db.backends.sqlite3',
@@ -29,13 +34,13 @@ if not settings.configured:
         INSTALLED_APPS = MY_INSTALLED_APPS,
         SITE_ID = 1,
         STATIC_URL = '/static/',
-        ROOT_URLCONF = '{{ project_name }}.tests.urls',
+        ROOT_URLCONF = '{{ project_name }}_tests.urls',
         NOSE_ARGS = [
-            "--with-xcoverage", 
-            "--cover-inclusive", 
-            "--with-xunit", 
+            "--with-xcoverage",
+            "--cover-inclusive",
+            "--with-xunit",
             "--exe",
-            "--verbosity=3", 
+            "--verbosity=3",
             "--cover-package={{ project_name }}"
         ],
         NOSE_PLUGINS = [
