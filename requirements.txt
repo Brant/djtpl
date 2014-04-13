@@ -1,5 +1,5 @@
 # Depending on your environment, you may comment one or more of the first 3 out
-django<1.6
+django<1.7
 pil
 psycopg2
 
