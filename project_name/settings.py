@@ -193,10 +193,15 @@ except ImportError:
     pass
 
 if DEBUG:
-    MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware', )
-    INTERNAL_IPS = ('127.0.0.1',)
+    MIDDLEWARE_CLASSES = (
+        'django.middleware.common.CommonMiddleware',
+        'django.contrib.sessions.middleware.SessionMiddleware',
+        'django.middleware.gzip.GZipMiddleware',
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
+        'django.middleware.csrf.CsrfViewMiddleware',
+        'django.contrib.auth.middleware.AuthenticationMiddleware',
+        'django.contrib.messages.middleware.MessageMiddleware',
+        'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
+    )
     INSTALLED_APPS += ('debug_toolbar', )
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEBUG_TOOLBAR_CONFIG = {
-        'INTERCEPT_REDIRECTS': False,
-    }
