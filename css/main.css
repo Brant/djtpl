@@ -257,6 +257,9 @@ a:visited { color: #205caa; }
 
 /* Syntax highlighting styles */
 /* ----------------------------------------------------------*/
+.highlight pre code{
+	font-family: "Menlo", Courier, monospace
+}
 
 .highlight  { background: #ffffff; }
 .highlight .c { color: #999988; font-style: italic } /* Comment */
