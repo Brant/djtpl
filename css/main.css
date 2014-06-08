@@ -257,8 +257,8 @@ a:visited { color: #205caa; }
 
 /* Syntax highlighting styles */
 /* ----------------------------------------------------------*/
-.highlight pre code{
-	font-family: "Menlo", Courier, monospace
+code, .highlight code{
+	font-family: "Source Code Pro", Courier, monospace
 }
 
 .highlight  { background: #ffffff; }
