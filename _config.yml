@@ -1,0 +1,16 @@
+# Site settings
+title: djtpl
+email: brant.steen@gmail.com
+description: "djtpl is a starter project template for Django"
+baseurl: "/djtpl"
+url: "http://brant.github.io"
+
+# custom stuff
+brant_homepage: "http://brantsteen.com"
+on_github: "http://github.com/Brant/djtpl"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+
