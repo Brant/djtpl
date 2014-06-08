@@ -24,3 +24,5 @@ pip install -r my_project/requirements.txt
 {% endhighlight %}
 
 In the above example, `my_project` can be replaced by whatever you want your project to be called.
+
+Next, take a look at the [pre-configured features]({{ "/features/" | prepend : site.baseurl }}) offered in djtpl.

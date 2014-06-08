@@ -1,5 +1,5 @@
 ---
-title: Project Settings
+title: Settings
 layout: page
 ---
 
