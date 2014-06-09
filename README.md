@@ -1,6 +1,9 @@
 My Django Project Starter
 -------------------------
 
+djtpl is a rather opinionated start to a new Django project. It includes a few things so that you don’t have to worry about dealing with them in order to get up and running.
+
+## Quickstart
 ```
 virtualenv env
 . ./env/bin/activate
@@ -9,12 +12,5 @@ django-admin.py startproject my_project --template=https://github.com/Brant/djtp
 pip install -r my_project/requirements.txt
 ```
 
-Test Suite
-----------
-This project architecture separates the project test suite from the individual apps. Tests should reside in my_project_tests/tests.py
-
-###To run tests 
-`python my_project_tests/runtests.py`
-
-###To enable coverage
-`pip install -r my_project_tests/requirements.txt` - then run tests as above
+## Documentation
+For more information, check out the [documentation](http://brant.github.io/djtpl/)
