@@ -14,6 +14,7 @@ djtpl is a rather opinionated start to a new Django project. It includes a few t
 The goal is to get a new Django project up and running as quickly as possible, without having to fiddle with a lot of configurations or directory structuring each time.
 
 ## Quickstart
+You'll need [virtualenv](http://virtualenv.readthedocs.org/en/latest/) pre-installed.
 
 {% highlight bash %}
 virtualenv env
