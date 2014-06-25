@@ -18,3 +18,13 @@ STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
 
 ALLOWED_HOSTS = []
+
+
+# CACHE_MIDDLEWARE_SECONDS = 3600
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+#         'LOCATION': '127.0.0.1:11211',
+#         # 'KEY_PREFIX': '',
+#     }
+# }
