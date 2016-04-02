@@ -3,7 +3,9 @@ import os
 import sys
 import imp
 
+import django
 from django.conf import settings
+from django.test.utils import get_runner
 
 
 MY_INSTALLED_APPS = [
@@ -21,6 +23,15 @@ except ImportError:
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, BASE_DIR)
+
+
+MY_TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+
+try:
+    from django_nose.runner import NoseTestSuiteRunner
+    MY_TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+except ImportError:
+    pass
 
 
 if not settings.configured:
@@ -47,22 +58,16 @@ if not settings.configured:
             'nosexcover.XCoverage',
             "nose_exclude.NoseExclude"
         ],
+        TEST_RUNNER = MY_TEST_RUNNER,
     )
 
 
-try:
-    from django_nose.runner import NoseTestSuiteRunner
-except ImportError:
-    from django.test.simple import DjangoTestSuiteRunner
-
-
 def runtests():
-    try:
-        runner = NoseTestSuiteRunner()
-    except NameError:
-        runner = DjangoTestSuiteRunner()
-    failures = runner.run_tests(['{{ project_name}}_tests'])
-    sys.exit(failures)
+    django.setup()
+    TestRunner = get_runner(settings)
+    test_runner = TestRunner()
+    failures = test_runner.run_tests(["my_project_tests"])
+    sys.exit(bool(failures))
 
 
 if __name__ == '__main__':
