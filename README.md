@@ -1,6 +1,8 @@
 djtpl: A Project Template for Django
 ====================================
 
+*Updated for Django 1.9*
+
 djtpl is a rather opinionated start to a new Django project. It includes a few things so that you don’t have to worry about dealing with them in order to get up and running.
 
 ## Quickstart
