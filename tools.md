@@ -3,7 +3,6 @@ title: Tools Included
 layout: page
 ---
 
-- [South](http://south.aeracode.org/): Database migrations
 - [Django Debug Toolbar](http://django-debug-toolbar.readthedocs.org/en/latest/): Great Django debugging toolset
 - [Noodles for Django](http://brant.github.io/django-noodles/): For miscellaneous helpful things
 - [Monster Under the Bed](http://brant.github.io/django-mub/): CSS and JS minifying
