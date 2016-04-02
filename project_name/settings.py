@@ -3,16 +3,9 @@
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJECT_PATH = os.path.dirname(
-        os.path.abspath(os.path.dirname(__file__)
-    )
-)
-
-print "Basedir: ", BASE_DIR
-print "projectpath: ", PROJECT_PATH
 
 THE_THEME = "themes/{{ project_name }}"
-THEME_PATH = PROJECT_PATH + "/assets/" + THE_THEME
+THEME_PATH = BASE_DIR + "/assets/" + THE_THEME
 
 DEBUG = True
 
@@ -63,7 +56,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = PROJECT_PATH + "/assets/uploads/"
+MEDIA_ROOT = BASE_DIR + "/assets/uploads/"
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -74,7 +67,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = PROJECT_PATH + "/collectstatic"
+STATIC_ROOT = BASE_DIR + "/collectstatic"
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
