@@ -1,15 +1,13 @@
 """
 Main URL configuraitons for {{ project_name }}
 """
-from django.conf.urls import patterns, include, url
+from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.conf.urls.static import static
 from django.conf import settings
 
 from noodles.urls import favicon_patterns
-
-admin.autodiscover()
 
 
 urlpatterns = [
@@ -28,5 +26,3 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += favicon_patterns
-
-
