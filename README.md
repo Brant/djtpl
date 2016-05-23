@@ -14,6 +14,7 @@ virtualenv env
 pip install django
 django-admin.py startproject my_project --template=https://github.com/Brant/djtpl/archive/master.zip
 pip install -r my_project/requirements.txt
+python manage.py runserver --setings=my_project.settings.local
 ```
 
 ## Documentation
