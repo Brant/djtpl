@@ -2,7 +2,7 @@
 
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 THE_THEME = "themes/{{ project_name }}"
 THEME_PATH = BASE_DIR + "/assets/" + THE_THEME
