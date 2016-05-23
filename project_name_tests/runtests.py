@@ -66,7 +66,7 @@ def runtests():
     django.setup()
     TestRunner = get_runner(settings)
     test_runner = TestRunner()
-    failures = test_runner.run_tests(["my_project_tests"])
+    failures = test_runner.run_tests(["{{ project_name }}_tests"])
     sys.exit(bool(failures))
 
 
